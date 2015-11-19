@@ -33,7 +33,7 @@ ul{list-style:none;}
 /*
  * 小于480px时
 */
-@media (max-width: 48rem) {
+@media (max-width: 480px) {
   .main{width:90%;}
 }
 
