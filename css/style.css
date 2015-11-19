@@ -1,4 +1,4 @@
-html{height:100%;}
+html{height:100%;font-size: 62.5%;}
 body,ul{margin:0;padding:0;}
 ul{list-style:none;}
 
@@ -21,13 +21,20 @@ ul{list-style:none;}
 .br10{border-radius:10px;}
 .auto{margin:0 auto;}
 .more{color:#000;font-size:12px;font-weight:bold;text-decoration:none;letter-spacing:2px;color:#fff;}
-.bg1{background:url(../img/bg.jpg) #000 no-repeat 50% 50% fixed;background-size:cover;}
+.bg1{background:url(../img/bg.jpg) #eee no-repeat 50% 50% fixed;background-size:cover;}
 
-.main{width:50%;height:332px;margin:-168px auto 10px;padding:20px 10px 10px;overflow:hidden;top:50%;}
+.main{width:50%;height:332px;margin:-168px auto 10px;overflow:hidden;top:50%;}
+.main-inner{padding:20px 10px 10px;}
 .main-list-ul{line-height:14px;}
 .main-list-ul a{color:#fff;}
 
 .article{width:80%;overflow:hidden;border-radius:10px;height:90%;margin:10px;padding:10px;}
 
+/*
+ * 小于480px时
+*/
+@media (max-width: 48rem) {
+  .main{width:90%;}
+}
 
 
