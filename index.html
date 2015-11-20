@@ -8,12 +8,12 @@ title: 杜忠波的个人网站
 		<div class="poa color-fff main-inner">
 			<div class="kt maxim">
 				<p class="tal">“对于世界而言，你是一个人；</p class="tal">
-			              <p class="tar">但是对于某个人，你是他的整个世界。”</p class="tal">
-			                                          <p class="tar">《水晶之恋》</p>
+			    <p class="tar">但是对于某个人，你是他的整个世界。”</p class="tal">
+			    <p class="tar">《水晶之恋》</p>
 			</div>			
 		</div>
 		<div class="poa color-fff main-inner articil-list">
-			<div class="tac"><b class="index-title">最新文章</b></div>
+			<div class="tac"><a class="index-title" href="javascript:;" onclick="reload();">杜忠波的个人网站</a></div>
 			<div class="line"></div>
 			<ul class="main-list-ul fs12">
 			　　{% for post in site.posts %}
@@ -29,6 +29,32 @@ title: 杜忠波的个人网站
 		</div>
 	</div>
 
-
+<script type="text/javascript">
+var indexData=[
+'“对于世界而言，你是一个人；|但是对于某个人，你是他的整个世界。”|《水晶之恋》',
+'只有在卡拉面前，|我才觉得自己有点人样|《卡拉是条狗》',
+'俄罗斯虽大，但已无路可退；|因为我们的身后就是莫斯科'
+];
+function random(min,max){
+	return Math.floor(Math.random()*max+min);
+}
+function init(){
+	var index = random(0,3);console.log(index);
+	document.getElementsByTagName('body')[0].className='bg'+index;
+	var arrTxt = indexData[index].split('|');
+	var txtWrap=document.querySelectorAll('.maxim p');
+	for(var i=0,len=arrTxt.length;i<len;i++){
+		if(arrTxt[i]){
+			txtWrap[i].innerHTML=arrTxt[i]
+		}else{
+			txtWrap[i].innerHTML='';
+		}
+	}
+}
+init();
+function reload(){
+	location.reload();
+}
+</script>
 
 </div>
