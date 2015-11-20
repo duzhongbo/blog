@@ -30,7 +30,8 @@ ul{list-style:none;}
 .main-inner{padding:20px 10px 10px;}
 .main-list-ul{line-height:14px;}
 .main-list-ul a{color:#fff;}
-.maxim{font-size:20px;}
+.maxim{font-size:20px;-webkit-animation: inAndOut 5s;-webkit-animation-fill-mode: forwards;}
+.articil-list{width:94%;opacity:.0;  filter:alpha(opacity=0);-webkit-animation: in 5s;-webkit-animation-delay:5s;-webkit-animation-fill-mode: forwards;}
 .article{width:80%;overflow:hidden;border-radius:10px;height:90%;}
 
 
@@ -41,5 +42,23 @@ ul{list-style:none;}
   .main{width:90%;}
   .article{font-size:14px;}
 }
+/*
+ * 动画
+*/
 
+@-webkit-keyframes inAndOut /* Safari 和 Chrome */
+{
+0%   {opacity:.0;  filter:alpha(opacity=0);}
 
+25%  {opacity:1;  filter:alpha(opacity=100);}
+
+60%  {opacity:1;  filter:alpha(opacity=100);}
+
+100% {opacity:0;  filter:alpha(opacity=0);}
+}
+@-webkit-keyframes in /* Safari 和 Chrome */
+{
+0%   {opacity:.0;  filter:alpha(opacity=0);}
+
+100%  {opacity:1;  filter:alpha(opacity=100);}
+}
