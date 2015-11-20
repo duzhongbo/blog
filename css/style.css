@@ -33,11 +33,7 @@ ul{list-style:none;}
 .maxim{font-size:20px;}
 .article{width:80%;overflow:hidden;border-radius:10px;height:90%;}
 
-/*@font-face{
-	font-family: kt;
-	src: url('../font/simkai.ttf')
-	    ,url('../font/simkai.eot');
-}*/
+
 /*
  * 小于480px时
 */
