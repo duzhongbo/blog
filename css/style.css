@@ -14,7 +14,7 @@ ul{list-style:none;}
 .of9{opacity:.9;  filter:alpha(opacity=90);}
 .yh{font-family:Microsoft YaHei,Microsoft JhengHei;}
 .kt{font-family:KaiTi;}
-.line{border-bottom:1px solid #fff;padding:10px 0 15px;}
+.line{border-bottom:1px solid #fff;padding:0 0 15px;}
 .bg-eee{background:#eee;}
 .bg-ccc{background:#ccc;}
 .bg-fff{background:#fff;}
@@ -27,11 +27,12 @@ ul{list-style:none;}
 .bg1{background:url(../img/bg.jpg) #eee no-repeat 50% 50% fixed;background-size:cover;}
 
 .main{width:50%;height:332px;margin:-168px auto 10px;overflow:hidden;top:50%;}
-.main-inner{padding:20px 10px 10px;}
+.main-inner{padding:20px 10px 10px;width:94%;}
 .main-list-ul{line-height:14px;}
 .main-list-ul a{color:#fff;}
-.maxim{font-size:20px;-webkit-animation: inAndOut 5s;-webkit-animation-fill-mode: forwards;}
-.articil-list{width:94%;opacity:.0;  filter:alpha(opacity=0);-webkit-animation: in 5s;-webkit-animation-delay:5s;-webkit-animation-fill-mode: forwards;}
+.index-title{letter-spacing:2px;}
+.maxim{font-size:20px;width:100%; -webkit-animation: inAndOut 5s;-webkit-animation-fill-mode: forwards;}
+.articil-list{opacity:.0;  filter:alpha(opacity=0);-webkit-animation: in 5s;-webkit-animation-delay:5s;-webkit-animation-fill-mode: forwards;}
 .article{width:80%;overflow:hidden;border-radius:10px;height:90%;}
 
 
