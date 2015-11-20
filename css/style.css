@@ -13,7 +13,7 @@ ul{list-style:none;}
 .of{opacity:.5;filter:alpha(opacity=50);}
 .of9{opacity:.9;  filter:alpha(opacity=90);}
 .yh{font-family:Microsoft YaHei,Microsoft JhengHei;}
-.kt{font-family:KaiTi;font-family: kt;}
+.kt{font-family:KaiTi;}
 .line{border-bottom:1px solid #fff;padding:10px 0 15px;}
 .bg-eee{background:#eee;}
 .bg-ccc{background:#ccc;}
@@ -33,11 +33,11 @@ ul{list-style:none;}
 .maxim{font-size:20px;}
 .article{width:80%;overflow:hidden;border-radius:10px;height:90%;}
 
-@font-face{
+/*@font-face{
 	font-family: kt;
 	src: url('../font/simkai.ttf')
-	    ,url('../font/simkai.eot'); /* IE9+ */
-}
+	    ,url('../font/simkai.eot');
+}*/
 /*
  * 小于480px时
 */
