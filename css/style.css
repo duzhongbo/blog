@@ -15,10 +15,10 @@ ul{list-style:none;}
 .yh{font-family:Microsoft YaHei,Microsoft JhengHei;}
 .kt{font-family:KaiTi;}
 .line{border-bottom:1px solid #fff;padding:0 0 15px;}
-.bg-eee{background:#eee;}
-.bg-ccc{background:#ccc;}
-.bg-fff{background:#fff;}
-.bg-000{background:#000;}
+.bg-eee{background-color:#eee;}
+.bg-ccc{background-color:#ccc;}
+.bg-fff{background-color:#fff;}
+.bg-000{background-color:#000;}
 .color-fff,.color-fff a{color:#fff;}
 .color-000,.color-000 a{color:#000;}
 .fs12{font-size:12px;}
