@@ -114,6 +114,8 @@ body{background-attachment:fixed;background-repeat:no-repeat;background-size:cov
 .nav a:hover{text-decoration:underline;}
 
 .article-list-page{margin-top:50px;width:80%;}
-.tag-wrap{margin-top:50px;}
-.tag-wrap-ul{margin-left:50px;overflow:hidden;}
+.tag-wrap{margin-top:50px;width:80%;}
+.tag-wrap-ul{overflow:hidden;}
 .tag-wrap-li{float:left;margin-right:10px;}
+
+.introduction-wrap,.other-wrap{margin-top:50px;width:80%;}

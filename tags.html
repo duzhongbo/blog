@@ -4,21 +4,23 @@ title: 文章标签
 ---
 {% include nav.html %}
 
-<ul class="tag-wrap tag-wrap-ul">
-{% for tag in site.tags %}
-<li class="tag-wrap-li">
-    <a href="javascript:void(window.location.href=encodeURI('tags.html?tag={{ tag[0] }}'))"> {{ tag[0] }}</a>
-</li>
-{% endfor %}
-</ul>
+<div class="tag-wrap auto">
+	<ul class="tag-wrap-ul">
+	{% for tag in site.tags %}
+	<li class="tag-wrap-li">
+	    <a href="javascript:void(window.location.href=encodeURI('tags.html?tag={{ tag[0] }}'))"> {{ tag[0] }}</a>
+	</li>
+	{% endfor %}
+	</ul>
+	<h1 id="J_tag"></h1>
+	<div id="J_cont"></div>
+</div>
 
 <script type="text/javascript">
 var dataStr2 = '{ {% for tag in site.tags %}{% if tag[0] != site.tags.first[0] %},{% endif %}"{{ tag[0] }}":[{% for post in tag[1] %}{% if post != tag[1].first %},{% endif %}{"url":"{{post.url}}", "title":"{{post.title}}", "date":"{{post.date | date:"%d/%m/%Y"}}"}{% endfor %}]{% endfor %} }',
     data2 = JSON.parse(dataStr2);
 </script>
 
-<h1 id="J_tag"></h1>
-<div id="J_cont"></div>
 <script type="text/javascript">
 function GetQueryString(name){
 	var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
