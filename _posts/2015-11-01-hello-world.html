@@ -1,12 +1,14 @@
 ---
 layout: article
-title: 我的第一篇文章
+title: 我的第1篇文章
 ---
 
+
+{% include nav.html %}
 <div class="auto" style="width:80%">
 <div class="article">
 	<h2 class="tac">{{ page.title }}</h2>
-	<p>我的第一篇文章</p>
+	<p>我的第1篇文章</p>
 	<span class="fr">{{ page.date | date_to_string }}</span>
 
 </div>

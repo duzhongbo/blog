@@ -2,6 +2,7 @@
 layout: default
 title: 杜忠波的个人网站
 ---
+{% include nav.html %}
 <div class="main">
 	<div style="display:block" class="main poa">
 		<span class="poa bg of bg-000 br10"></span>
@@ -15,7 +16,7 @@ title: 杜忠波的个人网站
 		<div class="poa color-fff main-inner article-list animation-article-list">
 			<div class="tac"><a class="index-title" href="javascript:;" onclick="reload();">杜忠波的个人网站</a></div>
 			<div class="line"></div>
-			<ul class="main-list-ul fs12">
+			<ul class="main-list-ul fs12 color-fff">
 			　　{% for post in site.posts %}
 				<li>
 					<span class="fr">{{ post.date | date_to_string }}</span> 
