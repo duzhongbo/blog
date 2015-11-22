@@ -17,14 +17,14 @@ title: 杜忠波的个人网站
 			<div class="tac"><a class="index-title" href="javascript:;" onclick="reload();">杜忠波的个人网站</a></div>
 			<div class="line"></div>
 			<ul class="main-list-ul fs12 color-fff">
-			　　{% for post in site.posts %}
+			　　{% for post in site.posts  limit:9 offset:0 %}
 				<li>
 					<span class="fr">{{ post.date | date_to_string }}</span> 
 					<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
 				</li>
 			　　{% endfor %}
 			</ul>
-			<span class="fr">
+ 			<span class="fr">
 				<a href="/articleList.html" class="more fs">MORE &gt&gt</a>
 			</span>
 		</div>

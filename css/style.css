@@ -30,7 +30,7 @@ body{background-attachment:fixed;background-repeat:no-repeat;background-size:cov
 .bg1{background-image:url(../img/bg1.jpg);}
 .bg2{background-image:url(../img/bg2.jpg);}
 
-.main{width:50%;height:336px;margin:-168px auto 10px;overflow:hidden;top:50%;}
+.main{width:70%;height:336px;margin:-168px auto 10px;overflow:hidden;top:50%;}
 .main-inner{padding:20px 10px 10px;width:94%;}
 .main-list-ul{line-height:14px;}
 .index-title{letter-spacing:2px;color:#fff;font-size:1.4rem;text-decoration:none;font-family: Georgia, serif;font-weight:bold;}
