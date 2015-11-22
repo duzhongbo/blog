@@ -19,6 +19,7 @@ ul{list-style:none;}
 .bg-ccc{background-color:#ccc;}
 .bg-fff{background-color:#fff;}
 .bg-000{background-color:#000;}
+.bg-ff0{background-color:#ff0;}
 .color-fff,.color-fff a{color:#fff;}
 .color-000,.color-000 a{color:#000;}
 .fs12{font-size:12px;}
@@ -126,3 +127,5 @@ body{background-attachment:fixed;background-repeat:no-repeat;background-size:cov
 .search-bt{border-radius:2px;border:1px solid #eee;}
 
 .search-wrap{margin-top:80px;width:80%;}
+
+.keyword{background-color:#ff0;padding:2px;}

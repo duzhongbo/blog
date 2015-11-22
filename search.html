@@ -45,14 +45,21 @@ function search(){
 function renderList(){
 	var wrap = document.querySelector('.search-result'),htmlStr='';
 	var data = search();
+	var keyword = GetQueryString("keyword");
 	for(var i=0,len=data.length;i<len;i++){
 		htmlStr+='<ul>\
                <li>\
-               		<a href="'+data[i]['url']+'">'+data[i]['title']+'</a>\
+               		<a href="'+data[i]['url']+'">'+highlight(data[i]['title'],keyword)+'</a>\
                </li>\
 			</ul>';
 	}
 	wrap.innerHTML = htmlStr;
 }
 renderList();
+// 给关键字高亮
+function highlight(str,keyword){
+	var reg = new RegExp(keyword,'g');
+	return str.replace(reg,'<span class="keyword">'+keyword+'</span>');
+}
+
 </script>
