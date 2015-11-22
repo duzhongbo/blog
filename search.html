@@ -1,0 +1,58 @@
+---
+layout: articleList
+title: 搜索页
+---
+{% include nav.html %}
+
+<div class="search-wrap auto">
+	<div>
+		搜索结果：
+		<div class="search-result"></div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+
+var dataSearch = '['+
+	{% for post in site.posts] %}
+		{% if post != site.posts[0] %}','+{% endif %}
+		'{'+
+			'"url":"{{post.url}}",'+
+			'"title":"{{post.title}}",'+
+			'"date":"{{post.date | date:"%d/%m/%Y"}}"'+
+		'}'+
+	{% endfor %}
+']';
+dataSearch=JSON.parse(dataSearch);
+// 取url参数
+function GetQueryString(name){
+	var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+	var r = window.location.search.substr(1).match(reg);
+	if(r!=null)return  decodeURI(r[2]); return null;
+}
+//
+function search(){
+	var keyword = GetQueryString("keyword"),data=[];
+	for(var i=0,len=dataSearch.length;i<len;i++){
+		if(dataSearch[i]['title'].indexOf(keyword)!=-1){
+			data.push(dataSearch[i]);
+		}
+	}
+	return data;
+}
+//
+function renderList(){
+	var wrap = document.querySelector('.search-result'),htmlStr='';
+	var data = search();
+	for(var i=0,len=data.length;i<len;i++){
+		htmlStr+='<ul>\
+               <li>\
+               		<a href="'+data[i]['url']+'">'+data[i]['title']+'</a>\
+               </li>\
+			</ul>';
+	}
+	wrap.innerHTML = htmlStr;
+}
+renderList();
+</script>

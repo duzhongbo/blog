@@ -17,8 +17,23 @@ title: 文章标签
 </div>
 
 <script type="text/javascript">
-var dataStr2 = '{ {% for tag in site.tags %}{% if tag[0] != site.tags.first[0] %},{% endif %}"{{ tag[0] }}":[{% for post in tag[1] %}{% if post != tag[1].first %},{% endif %}{"url":"{{post.url}}", "title":"{{post.title}}", "date":"{{post.date | date:"%d/%m/%Y"}}"}{% endfor %}]{% endfor %} }',
-    data2 = JSON.parse(dataStr2);
+var dataStr2 = '{'+
+	{% for tag in site.tags %}
+		{% if tag[0] != site.tags.first[0] %}','+{% endif %}
+		'"{{ tag[0] }}":'+
+		'['+
+		{% for post in tag[1] %}
+		{% if post != tag[1].first %}','+{% endif %}
+		'{'+
+			'"url":"{{post.url}}",'+
+			'"title":"{{post.title}}",'+
+			'"date":"{{post.date | date:"%d/%m/%Y"}}"'+
+		'}'+
+		{% endfor %}
+		']'+
+	{% endfor %}
+'}';
+    var data2 = JSON.parse(dataStr2);
 </script>
 
 <script type="text/javascript">
