@@ -128,4 +128,4 @@ body{background-attachment:fixed;background-repeat:no-repeat;background-size:cov
 
 .search-wrap{margin-top:80px;width:80%;}
 
-.keyword{background-color:#ff0;padding:2px;}
+.keyword{color:#f00;font-weight:bold;}
