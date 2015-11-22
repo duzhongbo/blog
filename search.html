@@ -6,7 +6,7 @@ title: 搜索页
 
 <div class="search-wrap auto">
 	<div>
-		搜索结果：
+		搜索结果： <br>
 		<div class="search-result"></div>
 	</div>
 </div>
@@ -20,11 +20,14 @@ var dataSearch = '['+
 		'{'+
 			'"url":"{{post.url}}",'+
 			'"title":"{{post.title}}",'+
+			'"content":"{{post.content | strip_html | strip_newlines}}",'+// 过滤html标签和换行符
 			'"date":"{{post.date | date:"%d/%m/%Y"}}"'+
 		'}'+
 	{% endfor %}
 ']';
+dataSearch=dataSearch.replace(/\s/g,'');// 过滤空白字符
 dataSearch=JSON.parse(dataSearch);
+
 // 取url参数
 function GetQueryString(name){
 	var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
@@ -35,7 +38,8 @@ function GetQueryString(name){
 function search(){
 	var keyword = GetQueryString("keyword"),data=[];
 	for(var i=0,len=dataSearch.length;i<len;i++){
-		if(dataSearch[i]['title'].indexOf(keyword)!=-1){
+		if(dataSearch[i]['title'].indexOf(keyword)!=-1
+			||dataSearch[i]['content'].indexOf(keyword)!=-1){
 			data.push(dataSearch[i]);
 		}
 	}
@@ -50,6 +54,7 @@ function renderList(){
 		htmlStr+='<ul>\
                <li>\
                		<a href="'+data[i]['url']+'">'+highlight(data[i]['title'],keyword)+'</a>\
+               		<p>'+getSummary(data[i]['content'],keyword)+'</p>\
                </li>\
 			</ul>';
 	}
@@ -59,7 +64,32 @@ renderList();
 // 给关键字高亮
 function highlight(str,keyword){
 	var reg = new RegExp(keyword,'g');
-	return str.replace(reg,'<span class="keyword">'+keyword+'</span>');
+	if(str.indexOf(keyword)!=-1){
+		return str.replace(reg,'<span class="keyword">'+keyword+'</span>');
+	}else{
+		return str;
+	}
+	
+}
+// 获取概要
+function getSummary(str,keyword){
+	var reg1Str = '[。,！,？]*([\u4E00-\u9FA5]*(['+keyword+'])[^。,！,？]*)';
+	var reg1 = new RegExp(reg1Str),strReturn;
+	var b=str.replace(reg1,function(word){
+	    var last = 50- arguments[1].length;
+	    var c = str.split(arguments[1]);
+	    if(c[1].length>last){
+	        var str1 = c[1].substr(0,last);
+	        var str2 = arguments[1].replace(keyword,'<span>'+keyword+'</span>')+str1+'...';
+	        strReturn=str2;
+	    }else{
+	    	strReturn=c[1];
+	    }
+	});
+
+	strReturn=highlight(strReturn,keyword);
+	return strReturn;
+
 }
 
 </script>
