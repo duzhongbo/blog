@@ -122,7 +122,7 @@ body{background-attachment:fixed;background-repeat:no-repeat;background-size:cov
 
 .introduction-wrap,.other-wrap{margin-top:50px;width:80%;}
 .nav-search{margin-left:20px;}
-.search-input{color:#666;}
+.search-input{color:#666;width:120px;}
 
 .search-bt{border-radius:2px;border:1px solid #eee;}
 
