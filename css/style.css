@@ -32,7 +32,7 @@ body{background-attachment:fixed;background-repeat:no-repeat;background-size:cov
 .bg1{background-image:url(../img/bg1.jpg);}
 .bg2{background-image:url(../img/bg2.jpg);}
 
-.main{width:50%;height:336px;margin:-168px auto 10px;overflow:hidden;top:50%;}
+.main{width:50%;height:345px;margin:-168px auto 10px;overflow:hidden;top:50%;}
 .main-inner{padding:20px 10px 10px;width:94%;}
 .main-list-ul{line-height:14px;}
 .index-title{letter-spacing:2px;color:#fff;font-size:1.4rem;text-decoration:none;font-family: Georgia, serif;font-weight:bold;}
@@ -41,7 +41,7 @@ body{background-attachment:fixed;background-repeat:no-repeat;background-size:cov
 .animation-maxim{ -webkit-animation: animationMaxim 10s;-webkit-animation-fill-mode:forwards;}
 .animation-maxim2{ -webkit-animation: animationMaxim2 12s;-webkit-animation-fill-mode:forwards;}
 .animation-maxim3{ -webkit-animation: animationMaxim3 12s;-webkit-animation-fill-mode:forwards;}
-.article-list{opacity:.0;  filter:alpha(opacity=0);}
+.article-list{}
 .animation-article-list{-webkit-animation: animationArticle 10s;-webkit-animation-fill-mode:forwards;}
 .animation-article-list2{ -webkit-animation: animationArticle2 12s;-webkit-animation-fill-mode:forwards;}
 .animation-article-list3{ -webkit-animation: animationArticle3 12s;-webkit-animation-fill-mode:forwards;}
