@@ -7,7 +7,7 @@ title: 杜忠波的个人网站
 	<div class="main poa">
 		<span class="poa bg of bg-000 br10"></span>
 		<div class="poa color-fff main-inner article-list">
-			<div class="tac"><a class="index-title" href="javascript:;" onclick="reload();">杜忠波的个人网站</a></div>
+			<div class="tac"><a class="index-title" href="javascript:;" onclick="changeBg();">杜忠波的个人网站</a></div>
 			<div class="line"></div>
 			<ul class="main-list-ul fs12 color-fff">
 			　　{% for post in site.posts  limit:9 offset:0 %}
@@ -24,61 +24,16 @@ title: 杜忠波的个人网站
 	</div>
 
 <script type="text/javascript">
-var indexData=[
-{
-	bg:'bg0',
-	txt:'“对于世界而言，你是一个人；|但是对于某个人，你是他的整个世界”|《水晶之恋》'
-},
-{
-	bg:'bg1',
-	txt:'“只有在卡拉面前，|我才觉得自己有点人样”|《卡拉是条狗》'	
-},
-{
-	bg:'bg2',
-	txt:'“俄罗斯虽大，但已无路可退；|因为我们的身后就是莫斯科”'
+// 轮换背景
+function changeBg(){
+	var data=changeBg.data;
+	var first= data.shift();
+	data.push(first);
+	document.getElementsByTagName('body')[0].className="bg-000 "+data[0];
 }
+changeBg.data=[
+'bg0','bg1','bg2'
 ];
-function random(min,max){
-	return Math.floor(Math.random()*max+min);
-}
-// 换格言和背景
-function init(){
-	
-	scrollArr();
-	var data = indexData[0];
-	document.getElementsByTagName('body')[0].className="bg-000 "+data.bg;
-	var arrTxt = data.txt.split('|');
-	var arrTxtWrap=document.querySelectorAll('.maxim p');
-	for(var i=0,len=arrTxtWrap.length;i<len;i++){
-		if(arrTxt[i]){
-			arrTxtWrap[i].innerHTML=arrTxt[i]
-		}else{
-			arrTxtWrap[i].innerHTML='无名氏';
-		}
-	}
-}
-// 滚动数组
-function scrollArr(){
-	var first= indexData.shift();
-	indexData.push(first);
-}
-function reload(){
-	init();// 格言重新赋值
-	startAnimation();// 重新播放淡入淡出动画
-	
-}
-// 开始动画
-function startAnimation(){
-	var maxim = document.querySelector('.maxim');
-	var articilList = document.querySelector('.article-list');
-	if(maxim.className.indexOf('2')!=-1){
-		maxim.className='kt maxim animation-maxim3';
-		articilList.className='poa color-fff main-inner article-list animation-article-list3';
-	}else{
-		maxim.className='kt maxim animation-maxim2';
-		articilList.className='poa color-fff main-inner article-list animation-article-list2';
-	}
-}
 </script>
 
 </div>
