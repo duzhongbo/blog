@@ -29,7 +29,7 @@ function renderList(){
 		}else{
 			img ='';
 		}
-		htmlStr+='<ul>\
+		htmlStr+='<ul class="underline">\
                <li class="search-result-li">\
                		<a href="'+data[i]['url']+'" class="color-00f fw">'+highlight(data[i]['title'],keyword)+'</a>\
                		<div class="oh">\
