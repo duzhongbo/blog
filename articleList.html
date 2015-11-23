@@ -4,8 +4,8 @@ title: 文章列表
 ---
 {% include nav.html %}
 
-<div class="article-list-page color-000 auto">
-	<ul class="main-list-ul fs12">
+<div class="common-wrap color-000 auto">
+	<ul class="main-list-ul underline">
 	　　{% for post in site.posts %}
 		<li>
 			<span class="fr">{{ post.date | date_to_string }}</span> 

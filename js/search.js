@@ -31,7 +31,7 @@ function renderList(){
 		}
 		htmlStr+='<ul>\
                <li class="search-result-li">\
-               		<a href="'+data[i]['url']+'">'+highlight(data[i]['title'],keyword)+'</a>\
+               		<a href="'+data[i]['url']+'" class="color-00f fw">'+highlight(data[i]['title'],keyword)+'</a>\
                		<div class="oh">\
                			'+img+'\
                			<span>'+getSummary(data[i]['content'],keyword)+'</span>\
@@ -46,7 +46,7 @@ renderList();
 function highlight(str,keyword){
 	var reg = new RegExp(keyword,'g');
 	if(str.indexOf(keyword)!=-1){
-		return str.replace(reg,'<span class="keyword">'+keyword+'</span>');
+		return str.replace(reg,'<span class="search-result-keyword">'+keyword+'</span>');
 	}else{
 		return str;
 	}

@@ -4,8 +4,8 @@ title: 文章标签
 ---
 {% include nav.html %}
 
-<div class="tag-wrap auto">
-	<ul class="tag-wrap-ul">
+<div class="common-wrap auto">
+	<ul class="tag-wrap-ul oh underline">
 	{% for tag in site.tags %}
 	<li class="tag-wrap-li">
 	    <a href="javascript:void(window.location.href=encodeURI('tags.html?tag={{ tag[0] }}'))"> {{ tag[0] }}</a>
