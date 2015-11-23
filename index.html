@@ -7,7 +7,7 @@ title: 杜忠波的个人网站
 	<div class="main poa">
 		<span class="poa bg of bg-000 br10"></span>
 		<div class="poa color-fff main-inner article-list">
-			<div class="tac"><a class="index-title" href="javascript:;" onclick="changeBg();">杜忠波的个人网站</a></div>
+			<div class="tac"><a class="index-title" href="javascript:;">杜忠波的个人网站</a></div>
 			<div class="line"></div>
 			<ul class="main-list-ul fs12 color-fff">
 			　　{% for post in site.posts  limit:9 offset:0 %}
@@ -23,17 +23,6 @@ title: 杜忠波的个人网站
 		</div>
 	</div>
 
-<script type="text/javascript">
-// 轮换背景
-function changeBg(){
-	var data=changeBg.data;
-	var first= data.shift();
-	data.push(first);
-	document.getElementsByTagName('body')[0].className="bg-000 "+data[0];
-}
-changeBg.data=[
-'bg0','bg1','bg2'
-];
-</script>
+<script type="text/javascript" src="/js/index.js"></script>
 
 </div>
