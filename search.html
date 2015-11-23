@@ -86,8 +86,17 @@ function getSummary(str,keyword){
 	    	strReturn=str;
 	    }
 	});
-
-	strReturn=highlight(strReturn,keyword);
+	if(strReturn){ // 主体内容有关键字的情况
+		strReturn=highlight(strReturn,keyword);
+	}else{ // 主体内容无关键字
+		if(str.length>50){
+			strReturn=str.substr(0,50)+'...';
+		}else{
+			strReturn=str;
+		}
+		
+	}
+	
 	return strReturn;
 
 }
