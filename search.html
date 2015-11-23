@@ -52,7 +52,7 @@ function renderList(){
 	var keyword = GetQueryString("keyword");
 	for(var i=0,len=data.length;i<len;i++){
 		htmlStr+='<ul>\
-               <li>\
+               <li class="search-result-li">\
                		<a href="'+data[i]['url']+'">'+highlight(data[i]['title'],keyword)+'</a>\
                		<p>'+getSummary(data[i]['content'],keyword)+'</p>\
                </li>\

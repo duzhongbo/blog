@@ -129,3 +129,4 @@ body{background-attachment:fixed;background-repeat:no-repeat;background-size:cov
 .search-wrap{margin-top:80px;width:80%;}
 
 .keyword{color:#f00;font-weight:bold;}
+.search-result-li{border-bottom: 1px solid #ccc;}
