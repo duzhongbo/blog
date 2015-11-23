@@ -21,7 +21,8 @@ var dataSearch = '['+
 			'"url":"{{post.url}}",'+
 			'"title":"{{post.title}}",'+
 			'"content":"{{post.content | strip_html | strip_newlines}}",'+// 过滤html标签和换行符
-			'"date":"{{post.date | date:"%d/%m/%Y"}}"'+
+			'"date":"{{post.date | date:"%d/%m/%Y"}}",'+
+			'"img":"{{post.customer.img}}"'+
 		'}'+
 	{% endfor %}
 ']';
@@ -49,12 +50,20 @@ function search(){
 function renderList(){
 	var wrap = document.querySelector('.search-result'),htmlStr='';
 	var data = search();
-	var keyword = GetQueryString("keyword");
+	var keyword = GetQueryString("keyword"),img;
 	for(var i=0,len=data.length;i<len;i++){
+		if(data[i]['img']){
+			img  = '<img src="'+data[i]['img']+'" width="100" class="fl search-pic">';
+		}else{
+			img ='';
+		}
 		htmlStr+='<ul>\
                <li class="search-result-li">\
                		<a href="'+data[i]['url']+'">'+highlight(data[i]['title'],keyword)+'</a>\
-               		<p>'+getSummary(data[i]['content'],keyword)+'</p>\
+               		<div class="oh">\
+               			'+img+'\
+               			<span>'+getSummary(data[i]['content'],keyword)+'</span>\
+               		</div>\
                </li>\
 			</ul>';
 	}
