@@ -73,7 +73,7 @@ function highlight(str,keyword){
 }
 // 获取概要
 function getSummary(str,keyword){
-	var reg1Str = '[。,！,？]([\u4E00-\u9FA5]*(['+keyword+'])[^。,！,？]*)';
+	var reg1Str = '[。,！,？]*([\u4E00-\u9FA5]*'+keyword+')';
 	var reg1 = new RegExp(reg1Str),strReturn;
 	var b=str.replace(reg1,function(word){
 	    var last = 50- arguments[1].length;
@@ -83,7 +83,7 @@ function getSummary(str,keyword){
 	        var str2 = arguments[1].replace(keyword,'<span>'+keyword+'</span>')+str1+'...';
 	        strReturn=str2;
 	    }else{
-	    	strReturn=c[1];
+	    	strReturn=str;
 	    }
 	});
 
