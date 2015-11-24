@@ -6,11 +6,11 @@ fis.config.set('roadmap.path',[
         useCompile :false,
         useHash : false
     },
-	// //定义html的产出路径
-	// {
-	// 	reg : '**.html',
-	// 	release : '/staticPub$&'
-	// },
+	//定义html的产出路径
+	{
+		reg : '**.html',
+		release : '/staticPub$&'
+	},
 	//定义js的产出路劲
 	{
 		reg : '**.js',
