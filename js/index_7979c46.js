@@ -1,0 +1,1 @@
+function changeBg(){var e=changeBg.data,a=e.shift();e.push(a),document.getElementsByTagName("body")[0].className="bg-000 "+e[0]}changeBg.data=["bg0","bg1","bg2"];var handleTitle=document.querySelector(".index-title");handleTitle.onclick=function(){changeBg()};
