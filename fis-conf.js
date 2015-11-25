@@ -9,27 +9,27 @@ fis.config.set('roadmap.path',[
 	//定义html的产出路径
 	{
 		reg : '**.html',
-		release : '/staticPub$&'
+		release : '/debug$&'
 	},
 	//定义js的产出路劲
 	{
 		reg : '**.js',
-        url : '/staticPub$&',
-		release : '/staticPub$&'
+        url : '/debug$&',
+		release : '/debug$&'
 	},
     //定义css的产出路劲
     {
         reg : '**.css',
-        url : '/staticPub$&',
-        release : '/staticPub$&'
+        url : '/debug$&',
+        release : '/debug$&'
     },
      // 所有img目录下的.png，.gif文件
     {
         reg : /^\/img\/(.*\.(?:png|gif|jpg))/i,
         //访问这些图片的url是 '/m/xxxx?log_id=123'
-        url : '/staticPub$&',
+        url : '/debug$&',
         //发布到/static/pic/xxx目录下
-        release : '/staticPub$&'
+        release : '/debug$&'
     },
 
 ]);
